@@ -13,7 +13,7 @@
 int menu_setcoins();
 int menu_gamecoindat2sd();
 int menu_sd2gamecoindat();
-int menu_back();
+int menu_debugback();
 
 int debugmenu_totalentries = 4;
 char *debugmenu_entries[4] = {
@@ -21,7 +21,7 @@ char *debugmenu_entries[4] = {
 "Copy gamecoin.dat from extdata to sd",
 "Copy gamecoin.dat from sd to extdata",
 "Back"};
-menuent_funcptr debugmenu_entryhandlers[5] = {menu_setcoins, menu_gamecoindat2sd, menu_sd2gamecoindat, menu_back};
+menuent_funcptr debugmenu_entryhandlers[4] = {menu_setcoins, menu_gamecoindat2sd, menu_sd2gamecoindat, menu_debugback};
 
 int menu_setcoins()
 {
@@ -73,8 +73,9 @@ int menu_sd2gamecoindat()
 	return 0;
 }
 
-int menu_back()
+int menu_debugback()
 {
+	printf("Returning to the Main Menu");
 	return -2;
 }
 

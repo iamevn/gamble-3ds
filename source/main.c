@@ -9,17 +9,23 @@
 #include "debugmenu.h"
 #include "playcoin.h"
 #include "menus.h"
+#include "bank.h"
 
+int menu_bank();
 int menu_blackjack();
 int menu_debug();
 int menu_exit();
 
-int mainmenu_totalentries = 3;
-char *mainmenu_entries[3] = {
-"Blackjack",
-"Debug",
-"Exit"};
-menuent_funcptr mainmenu_entryhandlers[5] = {menu_blackjack, menu_debug, menu_exit};
+int mainmenu_totalentries = 4;
+char *mainmenu_entries[4] = { "Bank", "Blackjack", "Debug", "Exit"};
+
+menuent_funcptr mainmenu_entryhandlers[4] = {menu_bank, menu_blackjack, menu_debug, menu_exit};
+
+int menu_bank()
+{
+	runBankMenu();
+	return 0;
+}
 
 int menu_blackjack()
 {
